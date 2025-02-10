@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <h1 class="text-center">Update Task</h1>
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            {% if error %}
+                <div class="alert alert-danger">{{ error }}</div>
+            {% endif %}
+            <form action="" method="post" class="p-4 border rounded shadow-sm bg-light">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="id_title">Title</label>
+                    <input type="text" name="title" class="form-control" id="id_title" value="{{ form.title.value }}" required>
+                </div>
+                <div class="form-group mt-3">
+                    <label for="id_description">Description</label>
+                    <textarea name="description" class="form-control" id="id_description" rows="3">{{ form.description.value }}</textarea>
+                </div>
+                <div class="form-group form-check mt-3">
+                    <input type="checkbox" name="important" class="form-check-input" id="id_important" {% if form.important.value %}checked{% endif %}>
+                    <label class="form-check-label" for="id_important">Important</label>
+                </div>
+                <div class="form-group text-center mt-3">
+                    <button type="submit" class="btn btn-primary btn-lg">Update</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

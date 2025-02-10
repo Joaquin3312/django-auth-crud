@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="jumbotron text-center bg-info text-white py-5">
+        <h1 class="display-3">Welcome to My Django Portfolio!</h1>
+        <p class="lead">Showcasing my skills and projects with Django.</p>
+        <hr class="my-4 bg-light">
+        <p>Explore the features and functionalities of this application.</p>
+        <a class="btn btn-light btn-lg mb-2" href="https://github.com/Joaquin3312" role="button">Visit My GitHub</a>
+        <a class="btn btn-dark btn-lg mb-2" href="https://www.linkedin.com/in/joaquin-ignacio-pinto-reynolds-501b6325b" role="button">Connect on LinkedIn</a>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Tasks pending</h5>
+                    <p class="card-text">Organize and record all your tasks</p>
+                    <a href="{% url 'tasks' %}" class="btn btn-primary">View details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Tasks completed</h5>
+                    <p class="card-text">all your completed tasks in one place.</p>
+                    <a href="{% url 'tasks_completed' %}" class="btn btn-primary">View details</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">Blog</h5>
+                    <p class="card-text">cooming soon..</p>
+                    <a href="#" class="btn btn-primary">View details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
