@@ -37,7 +37,7 @@ def signup(request):
                 })
         return render(request, 'signup.html',{
             'form' : UserCreationForm,
-            'error' : 'papáááá... quien te conoceee password error'
+            'error' : 'Password error, please try again'
         })
 
 
